@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silverlight Affiliate Program</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Silverlight Affiliate Program</h1>
+    </header>
+    <div class="container">
+        <h2>Affiliate Requirements</h2>
+        <p>Here are the requirements to become an affiliate:</p>
+        <ul>
+            <li>Requirement 1</li>
+            <li>Requirement 2</li>
+            <li>Requirement 3</li>
+            <!-- Add more requirements as needed -->
+        </ul>
+        <p>Contact us at affiliate@example.com for more information.</p>
+    </div>
+</body>
+</html>
