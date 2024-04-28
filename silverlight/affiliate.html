@@ -1,27 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silverlight Affiliate Program</title>
     <style>
-        /* Add your CSS styles here */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #222;
+            color: #ddd;
+            border-radius: 10px;
+        }
+
+        header {
+            background-color: #111;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            position: relative;
+        }
+
+        h1, h2 {
+            color: #fff;
+            text-align: center;
+        }
+
+        p {
+            color: #ccc;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .events {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .event-images {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .events img {
+            width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 20px; /* Smoother border radius */
+            box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.1);
+        }
     </style>
 </head>
+
 <body>
     <header>
         <h1>Silverlight Affiliate Program</h1>
     </header>
     <div class="container">
-        <h2>Affiliate Requirements</h2>
-        <p>Here are the requirements to become an affiliate:</p>
-        <ul>
-            <li>Requirement 1</li>
-            <li>Requirement 2</li>
-            <li>Requirement 3</li>
-            <!-- Add more requirements as needed -->
-        </ul>
-        <p>Contact us at affiliate@example.com for more information.</p>
+        <section id="requirements">
+            <h2>Affiliate Requirements</h2>
+            <p>Here are the requirements to become an affiliate:</p>
+            <ul>
+                <li>Must have over 20+ Members, which aren't botted.</li>
+                <li>Must have around 25+ Discord Members, which aren't botted.</li>
+                <li>Must be an active community, with around 10 messages a day.</li>
+                <!-- Add more requirements as needed -->
+            </ul>
+            <p>If you feel like you pass these requirements and want to affiliate with us, fill out the <a href="https://google.com">Form</a>.</p>
+        </section>
+
+        <section class="benefits">
+            <h2>Benefits</h2>
+            <ul>
+                <li>FREE events for your group, this can be Award Shows, etc.</li>
+                <li>Role in both, group and discord.</li>
+                <li>Your group can sponsor shows for FREE, this means can have your logo show up in an event.</li>
+                <!-- Add more benefits as needed -->
+            </ul>
+        </section>
+
+        <section class="events">
+            <h2>Previous Affiliate Events</h2>
+            <div class="event-images">
+                <img src="https://cdn.discordapp.com/attachments/1126621153956475061/1136030125977251980/image.png?ex=662f57c0&is=662e0640&hm=11a4f20c7da1342bfa86c3822ecb28842d0bffc1dd1e793507ff12e2744a5b0e&" alt="Event 1">
+                <img src="https://cdn.discordapp.com/attachments/1126621153956475061/1134965298081054891/image.png?ex=662f6c8d&is=662e1b0d&hm=03c1524f4da4f8ea0b38c385619b2adefaf59c20e0a3054bf9db305471d1020f&" alt="Event 2">
+                <img src="https://cdn.discordapp.com/attachments/1126621153956475061/1150491223778398358/image.png?ex=662fe072&is=662e8ef2&hm=abd7f43750495050b5c3248a3942171ebcedf8d9fbdbedbc67ab6474859308d3&" alt="Event 3">
+                <!-- Add more images with similar markup -->
+            </div>
+        </section>
     </div>
 </body>
+
 </html>
