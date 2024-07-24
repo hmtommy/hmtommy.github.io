@@ -13,6 +13,7 @@
             background-color: #333;
             color: #fff;
             position: relative;
+            overflow: hidden;
         }
 
         .card {
@@ -59,6 +60,21 @@
             font-size: 14px;
             text-align: center;
         }
+
+        .paintball {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0;
+            transform: scale(0);
+            animation: splat 1s ease-out forwards;
+        }
+
+        @keyframes splat {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
     </style>
 </head>
 <body>
@@ -80,5 +96,26 @@
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('click', function(e) {
+            const colors = ['#ff4757', '#ffa502', '#2ed573', '#1e90ff', '#ff6b81'];
+            const size = Math.random() * 100 + 20;
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            const splat = document.createElement('div');
+
+            splat.classList.add('paintball');
+            splat.style.width = `${size}px`;
+            splat.style.height = `${size}px`;
+            splat.style.backgroundColor = color;
+            splat.style.left = `${e.clientX - size / 2}px`;
+            splat.style.top = `${e.clientY - size / 2}px`;
+
+            document.body.appendChild(splat);
+
+            splat.addEventListener('animationend', () => {
+                document.body.removeChild(splat);
+            });
+        });
+    </script>
 </body>
 </html>
