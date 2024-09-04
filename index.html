@@ -3,119 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hmtommy</title>
-    <style>
-        body {
-            font-family: 'SF Pro', 'Helvetica Neue', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            background-color: #333;
-            color: #fff;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px;
-            padding: 20px;
-            background-color: #444;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-            transition: background-color 0.3s ease;
-        }
-
-        .profile-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            overflow: hidden;
-        }
-
-        .profile-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .profile-name {
-            font-size: 24px;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .profile-title {
-            font-size: 16px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .profile-contact {
-            font-size: 14px;
-            text-align: center;
-        }
-
-        .paintball {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0;
-            transform: scale(0);
-            animation: splat 1s ease-out forwards;
-        }
-
-        @keyframes splat {
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-    </style>
+    <title>Profile Card</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="card">
-        <div class="profile-img">
-            <img src="https://cdn.xoa.me/uploads/61a4f37c-f90a-4625-96ad-0a3804cf59f8.png" alt="Profile Picture">
-        </div>
-        <div class="profile-name">hmtommy</div>
-        <div class="profile-title">Project Manager</div>
-        <div class="profile-contact">
-            Discord: @hmtommy<br>
-            Roblox: @hmtommy<br>
-            Current Projects:<br>
-            Mapitua <br>
-            and Moonlast <br>
-            <a href="https://docs.google.com/document/d/1MoRf9HWVbdj5D8hul-yvu4V5kMmNNUJICgliOkUs9Ag/edit?usp=sharing" style="color: #1e90ff;">Resume</a> <br>
+    <div class="profile-card">
+        <div class="banner"></div>
+        <div class="profile-info">
+            <img src="https://i.snipp.gg/1167072850465783891/ff336def013a6ad6aa9b953a12e404bd.png" alt="Profile Picture" class="profile-pic">
+            <h1 class="name">Tommy</h1>
+            <p class="role">Project Lead</p>
+            <div class="status">
+                <p id="status-text">Loading...</p>
+                <p id="activity-text"></p>
+            </div>
         </div>
     </div>
-
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script>
-        document.addEventListener('click', function(e) {
-            const colors = ['#ff4757', '#ffa502', '#2ed573', '#1e90ff', '#ff6b81'];
-            const size = Math.random() * 100 + 20;
-            const color = colors[Math.floor(Math.random() * colors.length)];
-            const splat = document.createElement('div');
-
-            splat.classList.add('paintball');
-            splat.style.width = `${size}px`;
-            splat.style.height = `${size}px`;
-            splat.style.backgroundColor = color;
-            splat.style.left = `${e.clientX - size / 2}px`;
-            splat.style.top = `${e.clientY - size / 2}px`;
-
-            document.body.appendChild(splat);
-
-            splat.addEventListener('animationend', () => {
-                document.body.removeChild(splat);
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
