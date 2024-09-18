@@ -22,7 +22,9 @@ body {
 
 .banner {
     height: 100px;
-    background-color: #f3ddc8;
+    background-image: url('https://i.snipp.gg/1167072850465783891/2fe7a9b16674962d838e53ee06138a06.webp');
+    background-size: cover;
+    background-position: center;
 }
 
 .profile-info {
