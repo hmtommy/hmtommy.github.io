@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yhtommy</title>
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text {
+            position: absolute;
+            opacity: 1;
+            transition: opacity 0.1s ease-in-out, transform 0.3s ease-in-out;
+            width: 300px; /* Smaller image size */
+            height: auto;
+        }
+
+        #yh {
+            margin-left: -1.5px; /* Adjust this value to control the gap */
+        }
+
+        .hovered {
+            transform: scale(1.2); /* Enlarge on hover */
+        }
+
+        .clicked {
+            animation: bounce 0.5s ease-in-out;
+        }
+
+        @keyframes bounce {
+            0% { transform: scale(1) translateY(0); }
+            50% { transform: scale(1.1) translateY(-10px); }
+            100% { transform: scale(1) translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://i.snipp.gg/1167072850465783891/931083ddcffafe15fce0f89b36b784b1.png" alt="TOMMY" class="text" id="tommy">
+        <img src="https://i.snipp.gg/1167072850465783891/c3a59ff44983d3cd04c2cbf65cfa961a.png" alt="YH" class="text" id="yh">
+    </div>
+
+    <script>
+        // Function to flicker an element
+        function flicker(element) {
+            const randomDelay = Math.random() * 1500; // Random delay up to 1.5 seconds
+            setTimeout(() => {
+                element.style.opacity = element.style.opacity === "1" ? "0.2" : "1";
+                flicker(element); // Recursively call flicker to repeat
+            }, randomDelay);
+        }
+
+        // Get the elements and apply flicker
+        const tommy = document.getElementById("tommy");
+        const yh = document.getElementById("yh");
+
+        flicker(tommy);
+        flicker(yh);
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
