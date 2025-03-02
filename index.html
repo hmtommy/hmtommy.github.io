@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>yhtommy</title>
+    <title>yhtommy ASCII</title>
     <style>
         body {
             display: flex;
@@ -11,17 +11,30 @@
             align-items: center;
             height: 100vh;
             background: black;
-            color: white;
             font-family: monospace;
             text-align: center;
-            font-size: 16px;
-            white-space: pre;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
         }
+
         pre {
             background: linear-gradient(to bottom, #ff00ff, #00ffff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            white-space: pre;
+            font-size: 14px; /* Smaller default font size */
+            line-height: 1.1;
+            max-width: 80vw;
+            padding: 10px;
+        }
+
+        /* Even smaller text for mobile screens */
+        @media (max-width: 600px) {
+            pre {
+                font-size: 8px;
+            }
         }
     </style>
 </head>
