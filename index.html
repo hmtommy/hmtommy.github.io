@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>yhtommy ASCII</title>
+    <title>yhtommy</title>
     <style>
         body {
             display: flex;
@@ -16,6 +16,14 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
+            flex-direction: column;
+        }
+
+        .ascii-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         pre {
@@ -24,22 +32,31 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             white-space: pre;
-            font-size: 14px; /* Smaller default font size */
+            font-size: 14px; 
             line-height: 1.1;
             max-width: 80vw;
             padding: 10px;
         }
 
-        /* Even smaller text for mobile screens */
+        
         @media (max-width: 600px) {
             pre {
                 font-size: 8px;
             }
         }
+
+        /* Time text */
+        #time {
+            color: white;
+            font-size: 12px;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
-<pre>
+
+<div class="ascii-container">
+    <pre>
            __          __                                                      
           /  |        /  |                                                     
  __    __ $$ |____   _$$ |_     ______   _____  ____   _____  ____   __    __ 
@@ -52,6 +69,24 @@ $$    $$ |$$ |  $$ |  $$  $$/ $$    $$/ $$ | $$ | $$ |$$ | $$ | $$ |$$    $$ |
 /  \__$$ |                                                          /  \__$$ |
 $$    $$/                                                           $$    $$/ 
  $$$$$$/                                                             $$$$$$/  
-</pre>
+    </pre>
+    <div id="time">my time: --:--</div>
+</div>
+
+<script>
+    function updateCETTime() {
+        const now = new Date();
+        const utcOffset = 1;
+        const cetTime = new Date(now.getTime() + utcOffset * 60 * 60 * 1000);
+        const hours = String(cetTime.getUTCHours()).padStart(2, '0');
+        const minutes = String(cetTime.getUTCMinutes()).padStart(2, '0');
+        document.getElementById("time").textContent = `my time: ${hours}:${minutes}`;
+    }
+
+    
+    setInterval(updateCETTime, 1000);
+    updateCETTime();
+</script>
+
 </body>
 </html>
