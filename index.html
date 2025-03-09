@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yhtommy</title>
     <style>
+        @keyframes rgbText {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         body {
             display: flex;
             justify-content: center;
@@ -19,6 +25,7 @@
             padding: 0;
             overflow: hidden;
             flex-direction: column;
+            position: relative;
         }
 
         .ascii-container {
@@ -26,41 +33,54 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            position: relative;
+            z-index: 2;
+            text-align: center;
         }
 
         pre {
-            background: linear-gradient(to bottom, #ff00ff, #00ffff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
             white-space: pre;
-            font-size: 14px; 
+            font-size: 14px;
             line-height: 1.1;
             max-width: 80vw;
             padding: 10px;
         }
 
-        
-        @media (max-width: 600px) {
-            pre {
-                font-size: 8px;
-            }
+        #time, #birthday {
+            text-align: center;
         }
 
-        /* Time text */
-        #time {
-            color: white;
-            font-size: 12px;
+        #birthday {
+            display: none;
+            font-size: 20px;
+            font-weight: bold;
             margin-top: 10px;
+            background: linear-gradient(270deg, red, orange, yellow, green, cyan, blue, violet);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: rgbText 5s infinite linear;
+        }
+
+        .rainbow-text {
+            background: linear-gradient(270deg, red, orange, yellow, green, cyan, blue, violet);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: rgbText 5s infinite linear;
         }
     </style>
 </head>
 <body>
 
-<div class="ascii-container">
+<canvas id="confetti-canvas" style="display: none;"></canvas>
+
+<div class="ascii-container" id="ascii-container">
     <pre>
-           __          __                                                      
-          /  |        /  |                                                     
+                __          __                                                         
+               /  |        /  |                                                         
  __    __ $$ |____   _$$ |_     ______   _____  ____   _____  ____   __    __ 
 /  |  /  |$$      \ / $$   |   /      \ /     \/    \ /     \/    \ /  |  /  |
 $$ |  $$ |$$$$$$$  |$$$$$$/   /$$$$$$  |$$$$$$ $$$$  |$$$$$$ $$$$  |$$ |  $$ |
@@ -73,6 +93,7 @@ $$    $$/                                                           $$    $$/
  $$$$$$/                                                             $$$$$$/  
     </pre>
     <div id="time">my time: --:--</div>
+    <div id="birthday">BIRTHDAY</div>
 </div>
 
 <script>
@@ -84,11 +105,36 @@ $$    $$/                                                           $$    $$/
         const minutes = String(cetTime.getUTCMinutes()).padStart(2, '0');
         document.getElementById("time").textContent = `my time: ${hours}:${minutes}`;
     }
-
-    
     setInterval(updateCETTime, 1000);
     updateCETTime();
-</script>
 
+    function launchConfetti() {
+        const now = new Date();
+        if (now.getMonth() === 2 && now.getDate() === 9) {
+            document.getElementById("birthday").style.display = "block";
+            document.getElementById("confetti-canvas").style.display = "block";
+            document.getElementById("ascii-container").classList.add("rainbow-text");
+            
+            
+            setInterval(() => {
+                confetti({
+                    particleCount: 5,
+                    spread: 60,
+                    startVelocity: 40,
+                    gravity: 0.5,
+                    
+                    origin: {
+                        x: Math.random() > 0.5 ? 0 : 1, 
+                        y: Math.random() > 0.5 ? 0 : 1, 
+                    },
+                    colors: ['#ff0000', '#ff7f00', '#ffff00', '#00ff00', '#0000ff', '#4b0082', '#8b00ff'],
+                });
+            }, 300);
+        }
+    }
+    
+    window.onload = launchConfetti;
+</script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1"></script>
 </body>
 </html>
