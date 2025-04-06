@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yhtommy</title>
     <style>
-        @keyframes rgbText {
+        @keyframes gradientShift {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
@@ -36,6 +36,13 @@
             position: relative;
             z-index: 2;
             text-align: center;
+            background: linear-gradient(270deg, #6a0dad, #8a2be2, #1e90ff);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            animation: gradientShift 6s ease infinite;
         }
 
         pre {
@@ -48,6 +55,9 @@
 
         #time {
             text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -69,20 +79,32 @@ $$    $$/                                                           $$    $$/
  $$$$$$/                                                             $$$$$$/  
     </pre>
     <div id="time">my time: --:--</div>
+<div class="mod-links">
+    Community Manager @ <a href="https://discord.gg/dinosaur" target="_blank"><strong>Moonlast</strong></a><br>
+    Other <a href="https://docs.google.com/document/d/1MoRf9HWVbdj5D8hul-yvu4V5kMmNNUJICgliOkUs9Ag/edit?usp=sharing" target="_blank"><strong>moderation positions here</strong></a>
+</div>
 </div>
 
 <script>
     function updateCETTime() {
         const now = new Date();
-        const utcOffset = 1;
-        const cetTime = new Date(now.getTime() + utcOffset * 60 * 60 * 1000);
-        const hours = String(cetTime.getUTCHours()).padStart(2, '0');
-        const minutes = String(cetTime.getUTCMinutes()).padStart(2, '0');
-        document.getElementById("time").textContent = `my time: ${hours}:${minutes}`;
+
+        // Get current time in Europe/Paris (same zone as CET/CEST)
+        const cetFormatter = new Intl.DateTimeFormat('en-GB', {
+            timeZone: 'Europe/Paris',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: false
+        });
+
+        const [{ value: hour }, , { value: minute }] = cetFormatter.formatToParts(now);
+        document.getElementById("time").textContent = `my time: ${hour}:${minute}`;
     }
+
     setInterval(updateCETTime, 1000);
     updateCETTime();
 </script>
+
 
 </body>
 </html>
