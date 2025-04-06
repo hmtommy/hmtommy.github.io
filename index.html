@@ -46,36 +46,12 @@
             padding: 10px;
         }
 
-        #time, #birthday {
+        #time {
             text-align: center;
-        }
-
-        #birthday {
-            display: none;
-            font-size: 20px;
-            font-weight: bold;
-            margin-top: 10px;
-            background: linear-gradient(270deg, red, orange, yellow, green, cyan, blue, violet);
-            background-size: 400% 400%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: rgbText 5s infinite linear;
-        }
-
-        .rainbow-text {
-            background: linear-gradient(270deg, red, orange, yellow, green, cyan, blue, violet);
-            background-size: 400% 400%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: rgbText 5s infinite linear;
         }
     </style>
 </head>
 <body>
-
-<canvas id="confetti-canvas" style="display: none;"></canvas>
 
 <div class="ascii-container" id="ascii-container">
     <pre>
@@ -93,7 +69,6 @@ $$    $$/                                                           $$    $$/
  $$$$$$/                                                             $$$$$$/  
     </pre>
     <div id="time">my time: --:--</div>
-    <div id="birthday">BIRTHDAY</div>
 </div>
 
 <script>
@@ -107,34 +82,7 @@ $$    $$/                                                           $$    $$/
     }
     setInterval(updateCETTime, 1000);
     updateCETTime();
-
-    function launchConfetti() {
-        const now = new Date();
-        if (now.getMonth() === 2 && now.getDate() === 9) {
-            document.getElementById("birthday").style.display = "block";
-            document.getElementById("confetti-canvas").style.display = "block";
-            document.getElementById("ascii-container").classList.add("rainbow-text");
-            
-            
-            setInterval(() => {
-                confetti({
-                    particleCount: 5,
-                    spread: 60,
-                    startVelocity: 40,
-                    gravity: 0.5,
-                    
-                    origin: {
-                        x: Math.random() > 0.5 ? 0 : 1, 
-                        y: Math.random() > 0.5 ? 0 : 1, 
-                    },
-                    colors: ['#ff0000', '#ff7f00', '#ffff00', '#00ff00', '#0000ff', '#4b0082', '#8b00ff'],
-                });
-            }, 300);
-        }
-    }
-    
-    window.onload = launchConfetti;
 </script>
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1"></script>
+
 </body>
 </html>
