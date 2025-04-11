@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Projects</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #a259ff;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .ascii {
+      white-space: pre;
+      color: #a259ff;
+      margin-bottom: 20px;
+    }
+
+    .project {
+      border: 1px solid #a259ff;
+      padding: 15px;
+      margin: 15px auto;
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .time {
+      color: #a259ff;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    a {
+      color: #a259ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ascii">
+    <!-- Replace with your own ASCII art -->
+    ____  ____  ____  ____  ____<br>
+    ||P ||||R ||||O ||||J ||||S ||<br>
+    ||__||||__||||__||||__||||__||<br>
+    |/__\||/__\||/__\||/__\||/__\|
+  </div>
+
+  <div class="time">y h t o m m y</div>
+  <div>p r o j e c t s</div>
+
+  <!-- Project 1 -->
+  <div class="project">
+    <strong>🕺 Silverlight Entertainment</strong><br>
+    Roblox group focused on bringing entertainment to Roblox<br>
+    - Event Management<br>
+    <a href="#">Join Group 🔼</a>
+    <a href="#">Archived Events</a>
+  </div>
+
+  <!-- Project 1 -->
+  <div class="project">
+    <strong>📁 Moving Truss Model</strong><br>
+    A simple working moving truss model<br>
+    - Works with stacypilot<br>
+    <a href="https://cdn.discordapp.com/attachments/1360373614355939338/1360373712473292970/SLVER.rbxm?ex=67fae23f&is=67f990bf&hm=cf97bb62ab2df1595127c6fe893df0ac8238295e318815994b649ffe402a2003&">Download Model 🔼</a>
+    <a href="#">Documentation
+  </div>
+
+</body>
+</html>
