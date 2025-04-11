@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hacker Documentation</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #a259ff;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .ascii {
+      white-space: pre;
+      color: #a259ff;
+      margin-bottom: 20px;
+    }
+
+    .section {
+      border: 1px solid #a259ff;
+      padding: 15px;
+      margin: 15px auto;
+      max-width: 600px;
+      text-align: left;
+      background-color: #111;
+    }
+
+    .time {
+      color: #a259ff;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    a {
+      color: #a259ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Image styling */
+    .image-container {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #a259ff;
+      border-radius: 15px; /* Round the corners */
+    }
+
+    h2 {
+      color: #a259ff;
+    }
+
+    .highlight {
+      color: #FF00FF;
+    }
+
+    .output {
+      color: #00FF7F;
+    }
+
+    /* Button styling */
+    .button-container {
+      margin-top: 20px;
+    }
+
+    .button {
+      background-color: #a259ff;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 10px;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .button:hover {
+      background-color: #8a47cc;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="ascii">
+    <br>
+    ..+++=. .+=.  .:+..:++.  ..   .+++++. .+++++.    ..+++++=.  .++++=.  ++:....   .++++..  .++++.   
+    %@@@@@* %@@= .-@@@.@@@% =@@* .@@@@@@-.%@@@@@@-  -%@@@@@@@* .@@@@@@% #@@@-%@%. +@@@@@@. +@@@@@%   
+    #@@@=:  %@@= .@@@  %@@%=@@@# *@@#::. *@# :@@@=  -%@%@@@.   @@+ :@@@ @@@-:%@@@.+@@@*:   +@@@=:.   
+    *#-%@@@-%@@%:#@@=  :@@@%@@@ *@@@@@-.+@@@@@@@:       @@@.  #@@@@@@%. @@@#:#@@@.=#=+@@@+ +*-*@@@-  
+    +@@@@@@@=%@@@-#@@@@%.*@@@@%. *@@@@@@%+@@#-@@@@=      @@@@  #@@+*@@@@ .@@@@@@@.:@@@@@@@*+@@@@@@@=   
+    .*###*.. .##-..####. .+##=   .=#####..=*. .##-.      .##.  .*#. .*#:  -#####...=####:...+###*..   
+  </div>
+
+  <div class="time">SilverTruss</div>
+  <div>d o c u m e n t a t i o n</div>
+
+  <!-- Project 1 -->
+  <div class="section">
+    <h2>SET UP</h2>
+    <p>To set up Silver Truss, unpackage the folders by ungrouping or dragging them into the correct locations (e.g., <span class="highlight">[unpack in ServerScriptService]</span> would go to ServerScriptService).</p>
+    <p>If buttons are not working, update the script in <span class="highlight">LocalTruss</span> at around line 9, changing <span class="highlight">wait(3)</span> to a different number.</p>
+  </div>
+
+  <!-- Display Image -->
+  <div class="image-container">
+    <img src="Explorer.png" alt="Explorer Image">
+  </div>
+
+  <!-- Project 2 -->
+  <div class="section">
+    <h2>STACYPILOT SETUP</h2>
+    <p>Inside the <span class="highlight">!README</span> script, there will be a new script called <span class="highlight">MovingTruss</span>. Drag it into StacyPilot's Addons folder, enable it, and you should be good to go. Make sure to enable API Services in Game Settings for StacyPilot to work.</p>
+  </div>
+
+  <!-- Display Image -->
+  <div class="image-container">
+    <img src="AddonDrag.gif" alt="Dragging the Addon into the folder">
+  </div>
+
+  <!-- Project 3 -->
+  <div class="section">
+    <h2>How to Weld Lights to the Truss?</h2>
+    <p>If you're using GLights, follow the guide below:</p>
+    <pre class="output">
+      To summarise: Create a weld, select the base of the fixture and the moving
+      truss, then go to Model > Constraints > Weld. Once the weld is created, 
+      unanchor the fixture base.
+    </pre>
+    <p>If you're not using GLights, refer to the documentation for the lights you're using and try to configure it accordingly.</p>
+  </div>
+
+  <!-- Display Image -->
+  <div class="image-container">
+    <img src="WeldBottomToTruss.gif" alt="Welding the Bottom Part to Truss">
+  </div>
+
+  <!-- Project 4 -->
+  <div class="section">
+    <p><span class="highlight">Important:</span> Make sure to do this to every bottom part. Additionally, make sure the bottom part has the Weld Property, not the truss.</p>
+  </div>
+
+  <!-- Display Image -->
+  <div class="image-container">
+    <img src="WeldProperty.png" alt="Weld Property">
+  </div>
+
+  <!-- Buttons -->
+  <div class="button-container">
+    <a href="https://yhtommy.xyz" class="button">Back to Home</a>
+    <a href="projects.html" class="button">Back to Projects</a>
+  </div>
+
+</body>
+</html>
