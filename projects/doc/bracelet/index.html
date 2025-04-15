@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bracelet Documentation</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #a259ff;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .ascii {
+      white-space: pre;
+      color: #a259ff;
+      margin-bottom: 20px;
+    }
+
+    .section {
+      border: 1px solid #a259ff;
+      padding: 15px;
+      margin: 15px auto;
+      max-width: 600px;
+      text-align: left;
+      background-color: #111;
+    }
+
+    .time {
+      color: #a259ff;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    a {
+      color: #a259ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Image styling */
+    .image-container {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #a259ff;
+      border-radius: 15px; /* Round the corners */
+    }
+
+    h2 {
+      color: #a259ff;
+    }
+
+    .highlight {
+      color: #FF00FF;
+    }
+
+    .output {
+      color: #00FF7F;
+    }
+
+    /* Button styling */
+    .button-container {
+      margin-top: 20px;
+    }
+
+    .button {
+      background-color: #a259ff;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 10px;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .button:hover {
+      background-color: #8a47cc;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="ascii">
+    <br>
+    .-@@@%:-%@:  #@+=@@* .*: :%@@@%:=@@@@*.   -@@@#:  -@@@@#.  .#@@#. :*@@@-  *@@@@= %@=  *@@@@=.*@@@@@+
+    :@@@=- =@@- %@@-+@@%+@@% @@@==..@@:-@@+  .@@=@@@  @@::@@# =@@=-@@+@@#--. +@@+=-.%@@: :@@+=-.*@@@@%-.
+    -%+*@@@=@@%:@@=:.@@@@@%:+@@##: %@@@@@=.  #@@:@@@+*@@@@@+.+@@@@%@@=@@#-%+.@@@#+.+@@+:.@@@#+.   .@@%. 
+    +@@@@*:-%@#.@@@@-:%@@*. =@@@@@-+@*.#@@=  +@@@@@#==@#.*@@+.*- .*@* :*@@@*.%@@@@*-@@@%:#@@@@#.  .:@@- 
+  </div>
+
+  <div class="time">SLVER | LED Bracelet</div>
+  <div>d o c u m e n t a t i o n</div>
+
+  <!-- Project 1 -->
+  <div class="section">
+    <h2>SET UP</h2>
+    <p>To set up the LED Bracelet, unpackage the folders by ungrouping or dragging them into the correct locations (e.g., <span class="highlight">[unpack in ServerScriptService]</span> would go to ServerScriptService).</p>
+    <p>NOTE: The second model in the package is optional if you have the GIVE_BRACELET_ON_JOIN setting on false.</p>
+  </div>
+
+  <!-- Display Image -->
+  <div class="image-container">
+    <img src="BraceletExplorer.gif" alt="Explorer Image">
+  </div>
+
+  <!-- Project 2 -->
+  <div class="section">
+    <h2>STACYPILOT SETUP</h2>
+    <p>StacyPilot should already be set up automatically, if you do not use stacypilot do not worry, we have made it so it ignores the stacypilot property if you do not have stacypilot in workspace.</p>
+  </div>
+
+  <!-- Project 3 -->
+  <div class="section">
+    <h2>How do I configure the whitelist?</h2>
+    <p>To configure your whitelist, go to the BraceletModule script inside the model in workspace. Configure the whitelist accordingly:</p>
+    <pre class="output">
+        BraceletModule.WHITELIST = {
+            905059328,  -- Replace with your ID
+            987654321,  -- Replace with your ID
+        }
+    </pre>
+    <p>If you do not plan on using the whitelist, configure the WHITELISTENABLED to false</p>
+    <pre class="output">
+        BraceletModule.WHITELISTENABLED = false
+    </pre>
+    <p>This will give everyone in the game access to control the panel.</p>
+  </div>
+
+  <div class="section">
+    <h2>How do I make it so it does not give everyone the bracelet?</h2>
+    <p>To change the GIVE_BRACELET_ON_JOIN setting, just change the table from true to false.</p>
+    <pre class="output">
+        BraceletModule.GIVE_BRACELET_ON_JOIN = false
+    </pre>
+  </div>
+
+  <!-- Buttons -->
+  <div class="button-container">
+    <a href="https://yhtommy.xyz" class="button">Back to Home</a>
+    <a href="https://yhtommy.xyz/projects/" class="button">Back to Projects</a>
+  </div>
+
+</body>
+</html>
