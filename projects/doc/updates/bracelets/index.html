@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LED Bracelets Update Log</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #a259ff;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #a259ff;
+            background-color: #111;
+            text-align: left;
+        }
+
+        h1 {
+            color: #a259ff;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        .update-entry {
+            margin-bottom: 30px;
+            padding: 15px;
+            border-left: 3px solid #a259ff;
+            position: relative;
+        }
+
+        .update-entry::before {
+            content: '>';
+            position: absolute;
+            left: -10px;
+            color: #a259ff;
+        }
+
+        .date {
+            color: #a259ff;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .version {
+            color: #FF00FF;
+            font-weight: bold;
+        }
+
+        .changes {
+            margin-top: 10px;
+        }
+
+        .changes li {
+            margin-bottom: 5px;
+            position: relative;
+            padding-left: 20px;
+            color: #00FF7F;
+        }
+
+        .changes li::before {
+            content: '•';
+            color: #a259ff;
+            position: absolute;
+            left: 0;
+        }
+
+        .highlight {
+            color: #FF00FF;
+        }
+
+        .output {
+            color: #00FF7F;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>LED Bracelets Update Log</h1>
+        
+        <div class="update-entry">
+            <div class="date">[2024-04-25]</div>
+            <div class="version">VERSION 1.0.1</div>
+            <div class="changes">
+                <ul>
+                    <li>Fixed the issue where the LED Bracelets were not loading when the player joined the server if GIVE_BRACLETS_ON_JOIN was configured as true.</li>
+                    <li>Performance Improvements & Bug fixes.</li>
+                </ul>
+            </div>
+        </div>
+
+ <!-- soon 
+        <div class="update-entry">
+            <div class="date">[2024-03-15]</div>
+            <div class="version">VERSION 1.9.0</div>
+            <div class="changes">
+                <ul>
+                    <li>Deployed new security firewall matrix</li>
+                    <li>Integrated advanced AI monitoring systems</li>
+                    <li>Fixed memory leak in core processing unit</li>
+                    <li>Added support for parallel universe data transfer</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="update-entry">
+            <div class="date">[2024-03-10]</div>
+            <div class="version">VERSION 1.8.5</div>
+            <div class="changes">
+                <ul>
+                    <li>Patched critical security vulnerabilities</li>
+                    <li>Enhanced data compression algorithms</li>
+                    <li>Implemented new neural interface protocols</li>
+                    <li>Optimized quantum computing routines</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
+-->
