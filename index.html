@@ -86,24 +86,25 @@ $$    $$/                                                           $$    $$/
 </div>
 
 <script>
-    function updateCETTime() {
+    function updateUKTime() {
         const now = new Date();
 
-        // Get current time in Europe/Paris (same zone as CET/CEST)
-        const cetFormatter = new Intl.DateTimeFormat('en-GB', {
-            timeZone: 'Europe/Paris',
+        // Get current time in Europe/London (UK time, including BST in summer)
+        const ukFormatter = new Intl.DateTimeFormat('en-GB', {
+            timeZone: 'Europe/London',
             hour: '2-digit',
             minute: '2-digit',
             hour12: false
         });
 
-        const [{ value: hour }, , { value: minute }] = cetFormatter.formatToParts(now);
+        const [{ value: hour }, , { value: minute }] = ukFormatter.formatToParts(now);
         document.getElementById("time").textContent = `my time: ${hour}:${minute}`;
     }
 
-    setInterval(updateCETTime, 1000);
-    updateCETTime();
+    setInterval(updateUKTime, 1000);
+    updateUKTime();
 </script>
+
     
 <div class="new-link">
     <a href="https://yhtommy.xyz/projects" target="_blank"><strong>PROJECTS</strong></a>
